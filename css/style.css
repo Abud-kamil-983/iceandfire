@@ -1,0 +1,31 @@
+body{
+    background-image:url('../images/game-of-thrones-stark-wallpapers-full-hd-As-Wallpaper-HD.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+  font-family: 'Tagesschrift';
+  src: url('got.ttf');
+}
+a { color: inherit; } 
+td , h1, h3{
+	font-weight: bold !important;
+	 font-size: 20px !important; 
+	 font-family: 'Marck Script', cursive !important; 
+	 color: #D4AF37 !important;
+}
+
+ul#horizontal-list {
+	list-style: none;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+		font-weight: bold !important;
+	 font-size: 24px !important; 
+	 font-family: 'Marck Script', cursive !important; 
+	 color: #D4AF37 !important;
+	 margin: 6px !important;
+	}

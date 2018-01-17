@@ -1,0 +1,169 @@
+<div class="row" ng-controller="DetailsController as detailsCtrl">
+  <div class="col-md-12">
+    <div class="alert alert-danger" ng-show="detailsCtrl.error">
+      <strong>Error!</strong> {{detailsCtrl.error}}
+    </div>
+    <section ng-init = "detailsCtrl.getDetails()">
+
+      <h1>Details Of {{detailsCtrl.gotList[detailsCtrl.index].name ? detailsCtrl.gotList[detailsCtrl.index].name :detailsCtrl.gotList[detailsCtrl.index].aliases[0] }}  :</h1>
+
+      <div style="text-align: center; margin: 0 auto;">
+        <div class="card">
+
+          <div class="card-body">
+            <div class="table-wrapper-2">
+              <table  class="table table-responsive">
+                <tbody >
+                  <!-- ITERATING-THROUGH-MATCHES-->
+                  <tr ng-if = "detailsCtrl.gotList[detailsCtrl.index].name">
+                    <td>Name</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].name}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].authors.length > 0">
+                    <td>Author</td>
+                    <td><ul id="horizontal-list">
+                      <li ng-repeat = "author in detailsCtrl.gotList[detailsCtrl.index].authors">
+                        {{author}}
+                      </li>
+                    </ul>
+                  </td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].country">
+                    <td>Country</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].country}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].numberOfPages">
+                    <td>Number Of Pages</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].numberOfPages}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].mediaType">
+                    <td>Media Type</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].mediaType}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].publisher">
+                    <td>Publisher</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].publisher}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].released">
+                    <td>Released Date</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].released | date}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].aliases.length > 0">
+                    <td>Aliases</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].aliases[0]}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].born">
+                    <td>Born</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].born}}</td>
+                  </tr>
+
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].died">
+                    <td>Died</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].died}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].father">
+                    <td>Father</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].father}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].mother">
+                    <td>Mother</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].mother}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].spouse">
+                    <td>Spouse</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].spouse}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].title">
+                    <td>Title</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].title}}</td>
+                  </tr>
+                   <tr ng-if ="detailsCtrl.currentLord">
+                    <td>Current Lord</td>
+                    <td>{{detailsCtrl.currentLord}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].culture">
+                    <td>Culture</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].culture}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].gender">
+                    <td>Gender</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].gender}}</td>
+                  </tr>
+
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].coatOfArms">
+                    <td>Coat Of Arms</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].coatOfArms}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].diedOut">
+                    <td>Died Out</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].diedOut}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].founded">
+                    <td>Founded</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].founded}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].founder">
+                    <td>Founder</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].founder}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.heir">
+                    <td>Heir</td>
+                    <td>{{detailsCtrl.heir}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.overlord">
+                    <td>OverLord</td>
+                    <td>{{detailsCtrl.overlord}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].words">
+                    <td>Words</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].words}}</td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].seats.length > 0">
+                    <td>Seats</td>
+                    <td>
+                      <ul id="horizontal-list">
+                        <li ng-repeat = " seat in detailsCtrl.gotList[detailsCtrl.index].seats">
+                          {{seat}}
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr ng-if ="detailsCtrl.gotList[detailsCtrl.index].region">
+                    <td>Region</td>
+                    <td>{{detailsCtrl.gotList[detailsCtrl.index].region}}</td>
+                  </tr>
+                  <!-- END-OF-ITERATING-THROUGH-MATCHES-->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div ng-if = "detailsCtrl.chars.length > 0">
+          <h1>Charachters</h1>
+          <ul id="horizontal-list">
+            <li chip pink lighten-4  ng-repeat = " char in detailsCtrl.chars track by $index">
+              {{char}}
+            </li>
+          </ul>
+        </div>
+        <div ng-if = "detailsCtrl.buks.length > 0">
+        <h1>Books</h1>  
+          <ul id="horizontal-list">
+            <li chip pink lighten-4  ng-repeat = " buk in detailsCtrl.buks track by $index">
+              {{buk}}
+            </li>
+          </ul>
+        </div>
+        <div ng-if = "detailsCtrl.swornMembers.length > 0">
+        <h1>Sworn Members</h1>  
+          <ul id="horizontal-list">
+            <li chip pink lighten-4  ng-repeat = " swornMember in detailsCtrl.swornMembers track by $index">
+              {{swornMember}}
+            </li>
+          </ul>
+        </div>  
+      </div>
+
+    </section>
+  </div>
+</div>

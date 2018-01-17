@@ -1,0 +1,21 @@
+<div ng-controller="ListController as listCtrl">
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>List Of Books, Characters, Houses :</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="md-form">
+				<input style="color: white;" type="text" id="form1" ng-model ="nameFilter" class="form-control">
+				<label for="form1" class="">Filter By Name</label>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-init = "listCtrl.getAllList()">
+
+			<div class="col-md-4 col-xs-12" ng-repeat = "single in listCtrl.gotList| orderBy:'name' | filter:nameFilter">
+			<game-of-thrones name="{{single.name}}" counter = "{{listCtrl.gotList.indexOf(single)}}"></game-of-thrones>         
+		</div>
+	</div>
+</div>
